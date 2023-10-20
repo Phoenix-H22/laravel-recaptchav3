@@ -1,6 +1,6 @@
 {
     "name": "phoenix22h/laravel-recaptchav3",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Recaptcha V3 for Laravel package",
     "keywords": [
         "captcha",
