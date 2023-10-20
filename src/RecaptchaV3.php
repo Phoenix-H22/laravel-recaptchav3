@@ -119,13 +119,11 @@ class RecaptchaV3
         $fieldId = uniqid($name . '-', false);
         $html = '<input type="hidden" name="' . $name . '" id="' . $fieldId . '">';
         $html .= "<script defer>
-        window.addEventListener('DOMContentLoaded', function() {
-  grecaptcha.ready(function() {
-      grecaptcha.execute('" . $this->sitekey . "', {action: '" . $action . "'}).then(function(token) {
-         document.getElementById('" . $fieldId . "').value = token;
-      });
-  });
-});
+        grecaptcha.ready(function() {
+            grecaptcha.execute('" . $this->sitekey . "', {action: '" . $action . "'}).then(function(token) {
+               document.getElementById('" . $fieldId . "').value = token;
+            });
+        });
   </script>";
         return $html;
     }
