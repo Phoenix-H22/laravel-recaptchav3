@@ -107,7 +107,7 @@ class RecaptchaV3
      */
     public function initJs()
     {
-        return '<script defer src="' . $this->origin . '/api.js?hl=' . $this->locale . '&render=' . $this->sitekey . '"></script>';
+        return '<script src="' . $this->origin . '/api.js?hl=' . $this->locale . '&render=' . $this->sitekey . '"></script>';
     }
 
 
@@ -118,7 +118,7 @@ class RecaptchaV3
     {
         $fieldId = uniqid($name . '-', false);
         $html = '<input type="hidden" name="' . $name . '" id="' . $fieldId . '">';
-        $html .= "<script defer>
+        $html .= "<script>
         grecaptcha.ready(function() {
             grecaptcha.execute('" . $this->sitekey . "', {action: '" . $action . "'}).then(function(token) {
                document.getElementById('" . $fieldId . "').value = token;
